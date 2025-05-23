@@ -1,6 +1,6 @@
 # RHS demo consumer
 
-This demo consumer polls the warnings from the RHS service continuously. By default it creates each 10 minutes a json file which contains the received warnings.
+This demo consumer polls the warnings from the RHS service continuously. By default it creates each 10 minutes a json file which contains the received warnings in [geojson](https://geojson.org/) format. See this [example file](./example/2025-04-04_21-46-34.json) for more details. The json files can be visualized on [geojson.io](https://geojson.io/) and [kepler.gl](https://kepler.gl/demo).
 
 The following properties must be requested from the [RHS support](https://www.bosch-mobility.com/de/loesungen/assistenzsysteme/connected-map-services/):
 

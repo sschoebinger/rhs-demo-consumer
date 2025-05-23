@@ -1,0 +1,289 @@
+{
+    "type": "FeatureCollection",
+    "features": [
+        {
+            "type": "Feature",
+            "properties": {
+                "id": "97053894-0104-45d7-94cc-9f19aff2e745",
+                "name": "heavyRain",
+                "expiryTime": 1743797175628,
+                "functionalRoadClass": "FUNCTIONAL_ROAD_CLASS_7",
+                "isCancelled": false,
+                "probability": 1.0,
+                "countryCode": "ES"
+            },
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [
+                            -0.8710429,
+                            41.5996715
+                        ],
+                        [
+                            -0.8640025,
+                            41.6333709
+                        ],
+                        [
+                            -0.8973859,
+                            41.6558835
+                        ],
+                        [
+                            -0.9378191,
+                            41.6446838
+                        ],
+                        [
+                            -0.9448306,
+                            41.6109692
+                        ],
+                        [
+                            -0.9114379,
+                            41.5884696
+                        ],
+                        [
+                            -0.8710429,
+                            41.5996715
+                        ]
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "id": "bb553f28-ada9-4aa9-b15b-ec1371d6de06",
+                "name": "accident",
+                "expiryTime": 1743795838008,
+                "functionalRoadClass": "FUNCTIONAL_ROAD_CLASS_0",
+                "isCancelled": true,
+                "probability": 0.95,
+                "countryCode": "BE"
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        5.0576199,
+                        51.0999722
+                    ],
+                    [
+                        5.0570593,
+                        51.100059
+                    ],
+                    [
+                        5.0554497,
+                        51.1003323
+                    ],
+                    [
+                        5.0541063,
+                        51.1005769
+                    ],
+                    [
+                        5.0529736,
+                        51.1007973
+                    ],
+                    [
+                        5.0528663,
+                        51.1008194
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "id": "9ba052f9-5794-4db6-8d6e-7c284accf3b5",
+                "name": "brokenDownVehicle",
+                "expiryTime": 1743796827000,
+                "functionalRoadClass": "FUNCTIONAL_ROAD_CLASS_0",
+                "isCancelled": false,
+                "probability": 0.5,
+                "countryCode": "FR"
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        2.0956575,
+                        48.8421377
+                    ],
+                    [
+                        2.095577,
+                        48.8422719
+                    ],
+                    [
+                        2.0955251,
+                        48.8423433
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "id": "81302c50-5b55-445d-95ed-4b122627baa9",
+                "name": "brokenDownVehicle",
+                "expiryTime": 1743796827000,
+                "functionalRoadClass": "FUNCTIONAL_ROAD_CLASS_0",
+                "isCancelled": false,
+                "probability": 0.5,
+                "countryCode": "FR"
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        2.0536747,
+                        48.8084445
+                    ],
+                    [
+                        2.0536673,
+                        48.8084368
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "id": "4c998b97-8f29-49b9-9784-ef4ac1985499",
+                "name": "brokenDownVehicle",
+                "expiryTime": 1743796827000,
+                "functionalRoadClass": "FUNCTIONAL_ROAD_CLASS_0",
+                "isCancelled": false,
+                "probability": 0.5,
+                "countryCode": "FR"
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        2.0459775,
+                        48.8009062
+                    ],
+                    [
+                        2.0457933,
+                        48.8007726
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "id": "38b517c4-4343-4106-b2c8-768ecce6fe21",
+                "name": "brokenDownVehicle",
+                "expiryTime": 1743796831000,
+                "functionalRoadClass": "FUNCTIONAL_ROAD_CLASS_0",
+                "isCancelled": false,
+                "probability": 0.5,
+                "countryCode": "IT"
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        7.6806288,
+                        45.1688321
+                    ],
+                    [
+                        7.6809202,
+                        45.1686013
+                    ],
+                    [
+                        7.6809405,
+                        45.1685822
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "id": "7ae5843e-dd83-4cc3-adbb-cfb9ab460cbb",
+                "name": "brokenDownVehicle",
+                "expiryTime": 1743796823000,
+                "functionalRoadClass": "FUNCTIONAL_ROAD_CLASS_0",
+                "isCancelled": false,
+                "probability": 0.5,
+                "countryCode": "ES"
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        -2.9855212,
+                        43.2893636
+                    ],
+                    [
+                        -2.985498,
+                        43.2896514
+                    ],
+                    [
+                        -2.9854639,
+                        43.2899053
+                    ],
+                    [
+                        -2.9854165,
+                        43.2901881
+                    ],
+                    [
+                        -2.9853603,
+                        43.2904215
+                    ],
+                    [
+                        -2.9853595,
+                        43.2904239
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "id": "e5d3747e-1fc9-4a6b-84ed-9cb82a15a514",
+                "name": "heavyRain",
+                "expiryTime": 1743797762001,
+                "functionalRoadClass": "FUNCTIONAL_ROAD_CLASS_7",
+                "isCancelled": false,
+                "probability": 0.83,
+                "countryCode": "PT"
+            },
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [
+                            -9.1691489,
+                            38.8014707
+                        ],
+                        [
+                            -9.1724497,
+                            38.7659252
+                        ],
+                        [
+                            -9.1356515,
+                            38.7454482
+                        ],
+                        [
+                            -9.0955503,
+                            38.7605019
+                        ],
+                        [
+                            -9.0922157,
+                            38.7960365
+                        ],
+                        [
+                            -9.129016,
+                            38.8165283
+                        ],
+                        [
+                            -9.1691489,
+                            38.8014707
+                        ]
+                    ]
+                ]
+            }
+        }
+    ]
+}
