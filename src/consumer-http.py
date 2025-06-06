@@ -10,6 +10,7 @@
 # Original Microsoft sample modified for use with Bosch RHS Service
 #!/usr/bin/env python
 
+import os
 import sys
 import json
 import getopt
@@ -47,13 +48,34 @@ Options:
 # HTTP Server Handler
 # ─────────────────────────────────────────────────────────────────────────────
 
+API_TOKEN = os.environ.get("API_TOKEN", "changeme")
+PORT = os.environ.get("PORT", 8000)
+
 class RequestHandler(BaseHTTPRequestHandler):
     def _set_response(self):
         self.send_response(200)
         self.send_header("Content-type", "application/json")
         self.end_headers()
+    
+    def _unauthorized(self):
+        self.send_response(403)
+        self.end_headers()
+        self.wfile.write(b"Forbidden: Invalid or missing API token")
+
+    def _check_token(self):
+        # Option 1: Authorization header
+        auth = self.headers.get("Authorization")
+        if auth and auth.startswith("Bearer "):
+            return auth.split(" ", 1)[1] == API_TOKEN
+
+        # Option 2: Query parameter ?api_key=...
+        from urllib.parse import urlparse, parse_qs
+        query = parse_qs(urlparse(self.path).query)
+        return query.get("api_key", [None])[0] == API_TOKEN
 
     def do_GET(self):
+        if not self._check_token():
+            return self._unauthorized()
         self._set_response()
         self.wfile.write(b'{"type":"FeatureCollection","features":[\n')
         for i, msg in enumerate(messages.values()):
@@ -110,8 +132,7 @@ if __name__ == "__main__":
     messages = {}
 
     # Start HTTP server
-    PORT = 8000
-    server = HTTPServer(("", PORT), RequestHandler)
+    server = HTTPServer(("", int(PORT)), RequestHandler)
     threading.Thread(target=server.serve_forever, daemon=True).start()
     print(f"HTTP server running at http://localhost:{PORT}")
 

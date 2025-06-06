@@ -1,4 +1,4 @@
-FROM python:3.9-slim
+FROM --platform=linux/amd64 python:3.9-slim as build
 
 # Set the working directory
 WORKDIR /app
@@ -13,4 +13,4 @@ RUN pip install --no-cache-dir -r requirements.txt
 COPY src/ ./src/
 
 # Command to run the consumer application
-ENTRYPOINT ["python", "-u", "src/consumer.py"]
+ENTRYPOINT ["python", "-u", "src/consumer-http.py"]
