@@ -1,9 +1,11 @@
 # 🚨 RHS Demo Consumer
 
-This demo consumer continuously polls warnings from the **RHS service** and saves them in [GeoJSON](https://geojson.org/) format.
+This repository provides two demo consumers for the **RHS service**. Both continuously poll warnings and process them as [GeoJSON](https://geojson.org/) Features:
 
-By default, it creates a new `.json` file every **10 minutes**, containing the received warnings.  
-You can view these files with tools like:
+- **File Consumer**: Saves warnings to `.json` files every **10 minutes**.
+- **HTTP Consumer**: Serves the latest warnings from memory via an HTTP endpoint.
+
+You can view the GeoJSON files with tools like:
 
 - [geojson.io](https://geojson.io/)
 - [kepler.gl](https://kepler.gl/demo)
@@ -14,8 +16,7 @@ You can view these files with tools like:
 
 ## 🔐 Required Credentials
 
-Before using this consumer, request the following properties from [RHS support](https://www.bosch-mobility.com/de/loesungen/assistenzsysteme/connected-map-services/):
-
+Before using these consumers, request the following properties from [RHS support](https://www.bosch-mobility.com/de/loesungen/assistenzsysteme/connected-map-services/):
 
 | Property | Description |
 | - | - |
@@ -26,6 +27,7 @@ Before using this consumer, request the following properties from [RHS support](
 | group | Consumer group ID (supports multiple consumers with partitioned data) |
 | topic | The topic from which warnings are polled/consumed |
 
+---
 
 ## Setup
 
@@ -37,14 +39,31 @@ Before using this consumer, request the following properties from [RHS support](
    AZURE_CLIENT_SECRET=<client-secret>
    AZURE_TENANT_ID=<tenant-id>
    ```
-   Or create a .env file and load it with:
+   Or create a `.env` file and load it with:
 
    ```bash
    source .env
    ```
-2. **Run the consumer**
+
+2. **Run the File Consumer**  
+   This will write GeoJSON files every 10 minutes:
    ```bash
-   python consumer.py [options...] <eventhubs-namespace> <group> <topic>
+   python src/consumer-file.py [options...] <eventhubs-namespace> <group> <topic>
    ```
+
+3. **Run the HTTP Consumer**  
+   This will start an HTTP server (default port 8000) that serves the latest warnings:
+   ```bash
+   python src/consumer-http.py [options...] <eventhubs-namespace> <group> <topic>
+   ```
+   - The endpoint `/` returns the current in-memory GeoJSON FeatureCollection.
+   - Either set the `?api_key` parameter or the `Authorization` header to the specified token
+   - The default token `changeme` can be configured by setting the `API_TOKEN` environment variable
+
+---
+
+## 📖 Notes
+
+- Both consumers require the same credentials and Kafka/EventHub parameters.
 
 
